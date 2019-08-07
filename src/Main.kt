@@ -12,6 +12,7 @@
 //
 //data class Cards(val typeOfCard: TypeOfCard, val colourOfCard: ColourOfCard)
 
+data class Words(val word: String, var counter: Int)
 
 fun main(args: Array<String>) {
 
@@ -29,7 +30,7 @@ fun main(args: Array<String>) {
 //    playerHand.add(draw(deckOfCards))
 //    deckOfCards.remove(draw(deckOfCards))
 
-println(dnarna("qGGCtgt","iGGcwf"))
+//println(dnarna("qGGCtgt","iGGcwf"))
 
 //   String var questOne = "cat"
 //    var resultOne = ""
@@ -65,37 +66,59 @@ println(dnarna("qGGCtgt","iGGcwf"))
 //            println("$i is a prime")
 //        }
 //    }
-//    exercise("Am I am and I am not")
+    paragraphWordCounting("Am I am and I am not")
 }
 
-//fun exercise(sent: String) {
-//    sent.split(" ").forEach {
-//       var counter = 0
-//        for (i in sent.split(" ")) {
-//            if (it.toLowerCase() == i.toLowerCase()) {
-//                counter++
-//            }
-//        }
-//        println("The word \"$it\" is found $counter times")
-//    }
-//}
+fun paragraphWordCounting(paragraph: String) {
+    val wordList = mutableListOf<Words>()
+
+    paragraph.split(" ").forEach { w ->
+        val word = w.toLowerCase()
+        var alpha = true
+        wordList.forEach {
+            if (word == it.word) {
+                it.counter++
+                alpha = false
+            }
+        }
+        if (alpha){
+            wordList.add(Words(word,1))
+        }
+    }
+    wordList?.forEach {
+        println("${it.word} : ${it.counter}")
+    }
+}
+
+fun exercise(sent: String) {
+
+    sent.split(" ").map { it.toLowerCase() }.distinct().forEach {
+        var counter = 0
+        for (i in sent.split(" ")) {
+            if (it.toLowerCase() == i.toLowerCase()) {
+                counter++
+            }
+        }
+        println("The word \"$it\" is found $counter times")
+    }
+}
 //fun draw(lista: List<Cards>): Cards {
 //    return lista[0]
 //}
 
-fun dnarna (string1 : String, string2: String) : Int{
-    var counter = 0
-    if(string1.length == string2.length) {
-        for (i in 0 until string1.length) {
-            if (string1.toLowerCase()[i] != string2.toLowerCase()[i]) {
-                counter++
-            }
-        }
-    }else {
-        println("Wrong input")
-    }
-    return counter
-    }
+//fun dnarna (string1 : String, string2: String) : Int{
+//    var counter = 0
+//    if(string1.length == string2.length) {
+//        for (i in 0 until string1.length) {
+//            if (string1.toLowerCase()[i] != string2.toLowerCase()[i]) {
+//                counter++
+//            }
+//        }
+//    }else {
+//        println("Wrong input")
+//    }
+//    return counter
+//    }
 
 
 
