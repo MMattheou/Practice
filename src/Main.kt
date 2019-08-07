@@ -10,11 +10,7 @@ enum class TypeOfCard {
     CLUBS
 }
 
-data class Cards (val typeOfCard: TypeOfCard, val colourOfCard: ColourOfCard)
-
-
-
-
+data class Cards(val typeOfCard: TypeOfCard, val colourOfCard: ColourOfCard)
 
 
 fun main(args: Array<String>) {
@@ -22,7 +18,6 @@ fun main(args: Array<String>) {
 
     val deckOfCards = mutableListOf<Cards>()
     val playerHand = mutableListOf<Cards>()
-
     deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.RED))
     deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.BLACK))
     deckOfCards.add(Cards(TypeOfCard.DIAMONDS, ColourOfCard.RED))
@@ -31,6 +26,8 @@ fun main(args: Array<String>) {
     deckOfCards.add(Cards(TypeOfCard.SPADES, ColourOfCard.BLACK))
     deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.RED))
     deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.BLACK))
+    playerHand.add(draw(deckOfCards))
+    deckOfCards.remove(draw(deckOfCards))
 
 
 
@@ -69,8 +66,6 @@ fun main(args: Array<String>) {
 //        }
 //    }
 //    exercise("Am I am and I am not")
-
-println(draw(deckOfCards))
 }
 
 //fun exercise(sent: String) {
@@ -84,7 +79,9 @@ println(draw(deckOfCards))
 //        println("The word \"$it\" is found $counter times")
 //    }
 //}
-fun draw (lista : List<Cards>) : Cards{
-    return lista.random()
+fun draw(lista: List<Cards>): Cards {
+    return lista[0]
 }
+
+
 
