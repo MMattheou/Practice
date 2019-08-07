@@ -74,8 +74,6 @@ println(draw(deckOfCards))
 }
 
 //fun exercise(sent: String) {
-////    val temp =  sent.split(" ").groupingBy { it.toLowerCase() }.eachCount()
-////    println(temp)
 //    sent.split(" ").forEach {
 //       var counter = 0
 //        for (i in sent.split(" ")) {
