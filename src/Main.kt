@@ -1,35 +1,35 @@
-enum class ColourOfCard {
-    BLACK,
-    RED
-}
-
-enum class TypeOfCard {
-    HEARTS,
-    SPADES,
-    DIAMONDS,
-    CLUBS
-}
-
-data class Cards(val typeOfCard: TypeOfCard, val colourOfCard: ColourOfCard)
+//enum class ColourOfCard {
+//    BLACK,
+//    RED
+//}
+//
+//enum class TypeOfCard {
+//    HEARTS,
+//    SPADES,
+//    DIAMONDS,
+//    CLUBS
+//}
+//
+//data class Cards(val typeOfCard: TypeOfCard, val colourOfCard: ColourOfCard)
 
 
 fun main(args: Array<String>) {
 
 
-    val deckOfCards = mutableListOf<Cards>()
-    val playerHand = mutableListOf<Cards>()
-    deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.RED))
-    deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.BLACK))
-    deckOfCards.add(Cards(TypeOfCard.DIAMONDS, ColourOfCard.RED))
-    deckOfCards.add(Cards(TypeOfCard.DIAMONDS, ColourOfCard.BLACK))
-    deckOfCards.add(Cards(TypeOfCard.SPADES, ColourOfCard.RED))
-    deckOfCards.add(Cards(TypeOfCard.SPADES, ColourOfCard.BLACK))
-    deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.RED))
-    deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.BLACK))
-    playerHand.add(draw(deckOfCards))
-    deckOfCards.remove(draw(deckOfCards))
+//    val deckOfCards = mutableListOf<Cards>()
+//    val playerHand = mutableListOf<Cards>()
+//    deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.RED))
+//    deckOfCards.add(Cards(TypeOfCard.HEARTS, ColourOfCard.BLACK))
+//    deckOfCards.add(Cards(TypeOfCard.DIAMONDS, ColourOfCard.RED))
+//    deckOfCards.add(Cards(TypeOfCard.DIAMONDS, ColourOfCard.BLACK))
+//    deckOfCards.add(Cards(TypeOfCard.SPADES, ColourOfCard.RED))
+//    deckOfCards.add(Cards(TypeOfCard.SPADES, ColourOfCard.BLACK))
+//    deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.RED))
+//    deckOfCards.add(Cards(TypeOfCard.CLUBS, ColourOfCard.BLACK))
+//    playerHand.add(draw(deckOfCards))
+//    deckOfCards.remove(draw(deckOfCards))
 
-
+println(dnarna("qGGCtgt","iGGcwf"))
 
 //   String var questOne = "cat"
 //    var resultOne = ""
@@ -79,9 +79,23 @@ fun main(args: Array<String>) {
 //        println("The word \"$it\" is found $counter times")
 //    }
 //}
-fun draw(lista: List<Cards>): Cards {
-    return lista[0]
-}
+//fun draw(lista: List<Cards>): Cards {
+//    return lista[0]
+//}
+
+fun dnarna (string1 : String, string2: String) : Int{
+    var counter = 0
+    if(string1.length == string2.length) {
+        for (i in 0 until string1.length) {
+            if (string1.toLowerCase()[i] != string2.toLowerCase()[i]) {
+                counter++
+            }
+        }
+    }else {
+        println("Wrong input")
+    }
+    return counter
+    }
 
 
 
